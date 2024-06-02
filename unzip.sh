@@ -1,3 +1,5 @@
+# based on: https://github.com/sueszli/github-lfs-bypass/blob/main/download.sh
+
 # ------------------------------------------- decompress data
 # validate ./data/* files
 if [ ! -d data ]; then echo "data/ directory not found"; exit 1; fi
