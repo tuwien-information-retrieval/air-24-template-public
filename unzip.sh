@@ -1,4 +1,4 @@
-# based on: https://github.com/sueszli/github-lfs-bypass/blob/main/download.sh
+# based on: https://github.com/sueszli/github-lfs-bypass/
 
 # ------------------------------------------- decompress data
 # validate ./data/* files
