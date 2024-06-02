@@ -1,6 +1,6 @@
 services:
     main:
-        container_name: air
+        container_name: noodle-retrieval
         build: .
 
         # mount volume
