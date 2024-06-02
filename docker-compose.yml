@@ -1,7 +1,14 @@
 services:
     main:
-        container_name: neural-noodle
+        container_name: air
         build: .
+
+        # mount volume
+        volumes:
+            - type: bind
+              source: .
+              target: /workspace
+        working_dir: /workspace
 
         # config for pytorch IPC
         # for gpu access see: https://docs.docker.com/compose/gpu-support/
@@ -11,4 +18,4 @@ services:
 
         # map ports to host
         ports:
-            - "8888:8888"
+            - '8888:8888'
