@@ -22,29 +22,3 @@ echo "checksum matched: $expected_checksum == $actual_checksum"
 tar -xzf data-merged/merged.tar.gz -C data-merged
 rm data-merged/merged.tar.gz
 echo "untarred data-merged/merged.tar.gz"
-
-# ------------------------------------------- start
-docker-compose up
-
-docker exec -it neural-noodle /bin/bash
-open http://localhost:8888/
-
-# ------------------------------------------- stop
-docker-compose down
-
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
-docker rmi $(docker images -q)
-
-yes | docker container prune
-yes | docker image prune
-yes | docker volume prune
-yes | docker network prune
-yes | docker system prune
-
-# ------------------------------------------- verify cleanup
-docker ps --all
-docker images
-docker system df
-docker volume ls
-docker network ls
